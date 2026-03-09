@@ -1,30 +1,90 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['bt_salvar'])) {
+    $matricula = $_POST['matricula'];
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+
+
+    $linha = $matricula . ";" . $nome . ";" . $email . PHP_EOL;
+
+    $arqGravar = fopen("alunos.txt", "a");
+    fwrite($arqGravar, $linha);
+    fclose($arqGravar);
+
+
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-<h1>Listar Alunos</h1>
 
-<table>
-    <tr><th>Matricula</th><th>Nome</th><th>Email</th></tr>
-<?php
-   $arqAluno = fopen("alunos.txt","r") or die("erro ao abrir arquivo");
- 
-   while(!feof($arqAluno)) {
-        $linha = fgets($arqAluno);
-        $colunaDados = explode(";", $linha);
- 
- // <tr><td><?php echo $colunaDados[0] </td>
-        echo "<tr><td>" . $colunaDados[0] . "</td>" .
-            "<td>" . $colunaDados[1] . "</td>" .
-            "<td>" . $colunaDados[2] . "</td></tr>";
-    }
- 
-   fclose($arqAluno);
-    $msg = "Deu tudo certo!!!";
-?>
-</table>
-<p><?php echo $msg ?></p>
-<br>
+<head>
+    <style>
+        .container {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .cima,
+        .baixo {
+            flex: 0 0 50%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="cima">
+            <h1>Incluir Aluno</h1>
+            <form method="post" action="">
+                Matrícula:<input type="text" name="matricula" required>
+                Nome:<input type="text" name="nome" required>
+                Email:<input type="email" name="email" required>
+                <input type="submit" name="bt_salvar" value="Salvar Aluno">
+            </form>
+        </div>
+
+        <div class="baixo">
+            <h1>Listar Alunos</h1>
+            <table>
+                <tr>
+                    <th>Matricula</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+                <?php
+                $arqAluno = fopen("alunos.txt", "r") or die("erro ao abrir arquivo");
+
+                while (!feof($arqAluno)) {
+                    $linha = fgets(stream: $arqAluno);
+                    $colunaDados = explode(";", $linha);
+
+                    // <tr><td><?php echo $colunaDados[0] </td>
+                    echo "<tr>
+                        <td>" . $colunaDados[0] . "</td>
+                        <td>" . $colunaDados[1] . "</td>
+                        <td>" . $colunaDados[2] . "</td>
+                      </tr>";
+                }
+
+                fclose($arqAluno);
+                $msg = "Deu tudo certo!!!";
+
+
+                ?>
+            </table>
+            <p><?php echo $msg ?></p>
+            <br>
+        </div>
+    </div>
 </body>
+
 </html>
