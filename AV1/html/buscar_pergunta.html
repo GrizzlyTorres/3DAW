@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <title>Buscar ou Excluir Pergunta</title>
+<body>
+    <h2>Buscar ou Excluir Pergunta</h2>
+    <form action="../php/processa_buscar_excluir.php" method="post">
+        
+        <label>ID da Pergunta:</label><br>
+        <input type="text" name="id" required><br><br>
+        
+        <label>Tipo de Pergunta:</label><br>
+        <input type="radio" name="tipo" value="multi" required> Múltipla Escolha<br>
+        <input type="radio" name="tipo" value="texto" required> Texto Livre<br><br>
+
+        <button type="submit" name="acao" value="listar">Listar Esta Pergunta</button>
+        <button type="submit" name="acao" value="excluir">Excluir Esta Pergunta</button>
+    </form>
+</body>
+</html>

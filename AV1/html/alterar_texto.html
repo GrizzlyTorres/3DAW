@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <title>Alterar Pergunta - Texto</title>
+<body>
+    <h2>Alterar Pergunta - Texto</h2>
+    <form action="../php/processa_alterar_texto.php" method="post">
+        
+        <label>ID da Pergunta a alterar:</label><br>
+        <input type="text" name="id" size="50" required><br><br>
+
+        <label>Nova Pergunta Situacional:</label><br>
+        <textarea name="pergunta" rows="4" cols="50" required></textarea><br><br>
+        
+        <label>Nova Resposta/Decisão Esperada:</label><br>
+        <textarea name="resposta" rows="4" cols="50" required></textarea><br><br>
+        
+        <button type="submit">Salvar Alteração</button>
+    </form>
+</body>
+</html>

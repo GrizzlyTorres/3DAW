@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <title>Criar Pergunta - Múltipla Escolha</title>
+<body>
+    <h2>Criar Pergunta - Múltipla Escolha</h2>
+    <form action="../php/processa_multi.php" method="post">
+        
+        <label>Id:</label><br>
+        <input type="text" name="id" size="50" required><br><br>
+        
+        <label>Pergunta:</label><br>
+        <input type="text" name="pergunta" size="50" required><br><br>
+        
+        <label>Opção A:</label> <input type="text" name="opcaoA" required><br>
+        <label>Opção B:</label> <input type="text" name="opcaoB" required><br>
+        <label>Opção C:</label> <input type="text" name="opcaoC" required><br>
+        <label>Opção D:</label> <input type="text" name="opcaoD" required><br>
+        <label>Opção E:</label> <input type="text" name="opcaoE" required><br><br>
+
+        <label>Resposta Correta:</label><br>
+        <input type="radio" name="correta" value="A" required> Opção A <br>
+        <input type="radio" name="correta" value="B" required> Opção B <br>
+        <input type="radio" name="correta" value="C" required> Opção C <br>
+        <input type="radio" name="correta" value="D" required> Opção D <br>
+        <input type="radio" name="correta" value="E" required> Opção E <br><br>
+        
+        <button type="submit">Salvar Pergunta</button>
+    </form>
+</body>
+</html>
