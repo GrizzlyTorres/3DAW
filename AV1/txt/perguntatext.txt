@@ -1,0 +1,2 @@
+101;Como você lidaria com um conflito entre dois subalternos durante uma reunião?;Eu ouviria ambos separadamente para entender a causa raiz e buscaria uma solução mediada focada no profissionalismo.
+102;O que deve ser priorizado quando um projeto crítico apresenta atraso no cronograma?;A análise do caminho crítico para realocação de recursos e a comunicação imediata com os stakeholders.

@@ -1,0 +1,3 @@
+201;Qual o primeiro passo ao contratar um novo funcionário?;Publicar a vaga;Definir o perfil da competência;Entrevistar candidatos;Analisar currículos;B
+202;Um gestor recebe uma denúncia de erro administrativo grave. Qual a postura correta?;Ignorar se for um amigo;Expor o erro no mural;Investigar os fatos sigilosamente;Demitir todos os envolvidos;C
+203;Qual a melhor forma de motivar uma equipe desengajada?;Aumento salarial para todos;Feedback constante e reconhecimento;Aumentar a carga horária;Evitar reuniões;B
