@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora com javascript</title>
+</head>
+<body>
+
+    <h2>Calculadora</h2>
+
+    <input type="number" id="numero1" placeholder="Primeiro número">
+    
+    <select id="operacao">
+        <option value="+">Somar (+)</option>
+        <option value="-">Subtrair (-)</option>
+        <option value="*">Multiplicar (*)</option>
+        <option value="/">Dividir (/)</option>
+    </select>
+
+    <input type="number" id="numero2" placeholder="Segundo número">
+   
+    <button onclick="calcular()">Calcular</button>
+   
+    <h3>Resultado: <span id="resultado">0</span></h3>
+
+    <script>
+        function calcular() {
+            let num1 = parseFloat(document.getElementById('numero1').value);
+            let num2 = parseFloat(document.getElementById('numero2').value);
+            let operacao = document.getElementById('operacao').value;
+            let visorResultado = document.getElementById('resultado');
+            let resultadoFinal = 0;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                visorResultado.innerText = "Erro: Insira os dois números.";
+                return; // Para a execução da função aqui
+            }
+
+            switch (operacao) {
+                case '+':
+                    resultadoFinal = num1 + num2;
+                    break;
+                case '-':
+                    resultadoFinal = num1 - num2;
+                    break;
+                case '*':
+                    resultadoFinal = num1 * num2;
+                    break;
+                case '/':
+                    // Validação para evitar divisão por zero
+                    if (num2 === 0) {
+                        visorResultado.innerText = "Erro: Divisão por zero não é permitida.";
+                        return;
+                    }
+                    resultadoFinal = num1 / num2;
+                    break;
+                default:
+                    visorResultado.innerText = "Operação inválida.";
+                    return;
+            }
+
+            visorResultado.innerText = resultadoFinal;
+        }
+    </script>
+
+</body>
+</html>
