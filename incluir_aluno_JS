@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Incluir Aluno</title>
+    <script>
+        function EnviarAluno() {
+            let matricula = document.getElementById("matricula").value;
+            let nome = document.getElementById("nome").value;
+            let email = document.getElementById("email").value;
+
+            let msgErro = ValidaForm(matricula, nome, email);
+
+            if (msgErro !== "") {
+                document.getElementById("msg").innerHTML = "<span style='color: red;'>" + msgErro + "</span>";
+                return;
+            }
+
+            document.getElementById("msg").innerHTML = "Enviando...";
+
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("msg").innerHTML = "<span style='color: green;'>" + this.responseText + "</span>";
+                } else if (this.readyState == 4) {
+                    document.getElementById("msg").innerHTML = "<span style='color: red;'>Requisicao falhou: " + this.status + "</span>";
+                }
+            }
+            
+            xmlhttp.open("GET", "http://localhost/3daw/IncluirAluno.php?matricula=" + matricula +
+                            "&nome=" + nome + "&email=" + email);
+            xmlhttp.send();
+        }
+
+        function ValidaForm(pmatricula, pnome, pemail) {
+            let msg = "";
+            
+            if (pmatricula.trim() === "") {
+                msg += "A matrícula não pode ficar em branco.<br>";
+            }
+            
+            if (pnome.trim() === "") {
+                msg += "O nome não pode ficar em branco.<br>";
+            }
+            
+            if (pemail.trim() === "") {
+                msg += "O email não pode ficar em branco.<br>";
+            } else {
+                let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!regexEmail.test(pemail)) {
+                    msg += "Por favor, insira um email válido.<br>";
+                }
+            }
+
+            return msg;
+        }
+    </script>
+</head>
+<body>
+<h1>Inserir Aluno</h1>
+<br>
+<a href="ex52_IncluirAlunoJS.html">Inserir Aluno</a><br>
+<a href="ex52_alterarAluno.html">Alterar Aluno</a><br>
+<a href="ex52_listarAlunos.html">Listar Alunos</a><br>
+<a href="ex52_excluirAluno.html">Excluir Aluno</a><br>
+<a href="ex52_detalheAluno.html">Detalhe de Aluno</a><br>
+<br>
+<form action="" method=GET name="formAluno" id="formAluno">
+    Matricula: <input type=text name="matricula" id="matricula" required> <br>
+    nome: <input type=text name="nome" id="nome"> <br>
+    email: <input type=text name="email" id="email"> <br>
+    <br><br>
+    <input type="button" value="Inserir" onclick="EnviarAluno();">
+</form>
+<p id="msg"></p>
+<br>
+</body>
+</html>
