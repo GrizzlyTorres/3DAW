@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Criar Pergunta - Múltipla Escolha</title>
+</head>
+<body>
+    <h2>Criar Pergunta - Múltipla Escolha</h2>
+    <form id="formMulti">
+        <label>Id:</label><br>
+        <input type="text" id="id" size="50" required><br><br>
+        
+        <label>Pergunta:</label><br>
+        <input type="text" id="pergunta" size="50" required><br><br>
+        
+        <label>Opção A:</label> <input type="text" id="opcaoA" required><br>
+        <label>Opção B:</label> <input type="text" id="opcaoB" required><br>
+        <label>Opção C:</label> <input type="text" id="opcaoC" required><br>
+        <label>Opção D:</label> <input type="text" id="opcaoD" required><br>
+        <label>Opção E:</label> <input type="text" id="opcaoE" required><br><br>
+
+        <label>Resposta Correta:</label><br>
+        <input type="radio" name="correta" value="A"> Opção A <br>
+        <input type="radio" name="correta" value="B"> Opção B <br>
+        <input type="radio" name="correta" value="C"> Opção C <br>
+        <input type="radio" name="correta" value="D"> Opção D <br>
+        <input type="radio" name="correta" value="E"> Opção E <br><br>
+        
+        <button type="button" onclick="salvarPerguntaMulti()">Salvar Pergunta</button>
+    </form>
+    
+    <p id="mensagem"></p>
+
+    <script>
+        function salvarPerguntaMulti() {
+            let id = document.getElementById('id').value;
+            let pergunta = document.getElementById('pergunta').value;
+            let opcaoA = document.getElementById('opcaoA').value;
+            let opcaoB = document.getElementById('opcaoB').value;
+            let opcaoC = document.getElementById('opcaoC').value;
+            let opcaoD = document.getElementById('opcaoD').value;
+            let opcaoE = document.getElementById('opcaoE').value;
+            let msgBox = document.getElementById('mensagem');
+
+            let correta = document.querySelector('input[name="correta"]:checked');
+
+            if (id.trim() === "" || pergunta.trim() === "" || opcaoA.trim() === "") {
+                msgBox.innerHTML = "<span style='color: red;'>Os campos principais devem ser preenchidos!</span>";
+                return;
+            }
+
+            if (!correta) {
+                msgBox.innerHTML = "<span style='color: red;'>Selecione qual é a resposta correta!</span>";
+                return;
+            }
+
+            let dadosPergunta = {
+                id: id,
+                pergunta: pergunta,
+                opcoes: {
+                    A: opcaoA,
+                    B: opcaoB,
+                    C: opcaoC,
+                    D: opcaoD,
+                    E: opcaoE
+                },
+                resposta_correta: correta.value
+            };
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:3000/perguntas_multi", true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 || xhr.status === 201) {
+                        msgBox.innerHTML = "<span style='color: green;'>Pergunta salva com sucesso!</span>";
+                        document.getElementById("formMulti").reset();
+                    } else {
+                        msgBox.innerHTML = "<span style='color: red;'>Erro ao salvar: " + xhr.status + "</span>";
+                    }
+                }
+            };
+
+            xhr.send(JSON.stringify(dadosPergunta));
+        }
+    </script>
+</body>
+</html>
