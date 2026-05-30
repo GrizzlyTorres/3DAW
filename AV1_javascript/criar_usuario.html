@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Cadastrar Usuário</title>
+</head>
+<body>
+    <h2>Cadastrar Usuário</h2>
+    <form id="formUsuario">
+        <label>Id:</label><br>
+        <input type="text" id="id" required><br><br>
+        
+        <label>Username:</label><br>
+        <input type="text" id="username" required><br><br>
+        
+        <label>Nome:</label><br>
+        <input type="text" id="nome" required><br><br>
+        
+        <label>Email:</label><br>
+        <input type="email" id="email" required><br><br>
+        
+        <button type="button" onclick="salvarUsuario()">Salvar Usuário</button>
+    </form>
+    
+    <p id="mensagem"></p>
+
+    <script>
+        function salvarUsuario() {
+            let id = document.getElementById('id').value;
+            let username = document.getElementById('username').value;
+            let nome = document.getElementById('nome').value;
+            let email = document.getElementById('email').value;
+            let msgBox = document.getElementById('mensagem');
+
+            if (id.trim() === "" || username.trim() === "" || nome.trim() === "" || email.trim() === "") {
+                msgBox.innerHTML = "<span style='color: red;'>Todos os campos devem ser preenchidos!</span>";
+                return;
+            }
+
+            let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regexEmail.test(email)) {
+                msgBox.innerHTML = "<span style='color: red;'>Por favor, insira um e-mail válido.</span>";
+                return;
+            }
+
+            let dadosUsuario = {
+                id: id,
+                username: username,
+                nome: nome,
+                email: email
+            };
+
+            msgBox.innerHTML = "<span style='color: blue;'>Enviando dados...</span>";
+            let xhr = new XMLHttpRequest();
+            
+            xhr.open("POST", "http://localhost:3000/usuarios", true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 || xhr.status === 201) {
+                        msgBox.innerHTML = "<span style='color: green;'>Usuário cadastrado com sucesso!</span>";
+                        document.getElementById("formUsuario").reset();
+                    } else {
+                        msgBox.innerHTML = "<span style='color: red;'>Erro ao cadastrar: " + xhr.status + "</span>";
+                    }
+                }
+            };
+
+            xhr.send(JSON.stringify(dadosUsuario));
+        }
+    </script>
+</body>
+</html>
