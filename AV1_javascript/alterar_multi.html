@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <title>Alterar Pergunta - Múltipla Escolha</title>
+<body>
+    <h2>Alterar Pergunta - Múltipla Escolha</h2>
+    <form action="../php/processa_alterar_multi.php" method="post">
+        
+        <label>ID da Pergunta a alterar:</label><br>
+        <input type="text" name="id" size="50" required><br><br>
+        
+        <label>Nova Pergunta:</label><br>
+        <input type="text" name="pergunta" size="50" required><br><br>
+        
+        <label>Nova Opção A:</label> <input type="text" name="opcaoA" required><br>
+        <label>Nova Opção B:</label> <input type="text" name="opcaoB" required><br>
+        <label>Nova Opção C:</label> <input type="text" name="opcaoC" required><br>
+        <label>Nova Opção D:</label> <input type="text" name="opcaoD" required><br>
+        <label>Nova Opção E:</label> <input type="text" name="opcaoE" required><br><br>
+
+
+        <label>Nova Resposta Correta:</label><br>
+        <input type="radio" name="correta" value="A" required> Opção A <br>
+        <input type="radio" name="correta" value="B" required> Opção B <br>
+        <input type="radio" name="correta" value="C" required> Opção C <br>
+        <input type="radio" name="correta" value="D" required> Opção D <br>
+        <input type="radio" name="correta" value="E" required> Opção E <br><br>
+        
+        <button type="submit">Salvar Alteração</button>
+    </form>
+</body>
+</html>
