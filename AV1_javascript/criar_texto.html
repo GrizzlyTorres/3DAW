@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Criar Pergunta - Texto</title>
+</head>
+<body>
+    <h2>Criar Pergunta - Texto</h2>
+    <form id="formTexto">
+        <label>Id:</label><br>
+        <input type="text" id="id" size="50" required><br><br>
+        
+        <label>Pergunta Situacional:</label><br>
+        <textarea id="pergunta" rows="4" cols="50" required></textarea><br><br>
+        
+        <label>Resposta/Decisão Esperada:</label><br>
+        <textarea id="resposta" rows="4" cols="50" required></textarea><br><br>
+        
+        <button type="button" onclick="salvarPerguntaTexto()">Salvar Pergunta</button>
+    </form>
+    
+    <p id="mensagem"></p>
+
+    <script>
+        function salvarPerguntaTexto() {
+            let id = document.getElementById('id').value;
+            let pergunta = document.getElementById('pergunta').value;
+            let resposta = document.getElementById('resposta').value;
+            let msgBox = document.getElementById('mensagem');
+
+            if (id.trim() === "" || pergunta.trim() === "" || resposta.trim() === "") {
+                msgBox.innerHTML = "<span style='color: red;'>Todos os campos devem ser preenchidos!</span>";
+                return;
+            }
+
+            let dadosTexto = {
+                id: id,
+                pergunta: pergunta,
+                resposta: resposta
+            };
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:3000/perguntas_texto", true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 || xhr.status === 201) {
+                        msgBox.innerHTML = "<span style='color: green;'>Pergunta salva com sucesso!</span>";
+                        document.getElementById("formTexto").reset();
+                    } else {
+                        msgBox.innerHTML = "<span style='color: red;'>Erro ao salvar: " + xhr.status + "</span>";
+                    }
+                }
+            };
+
+            xhr.send(JSON.stringify(dadosTexto));
+        }
+    </script>
+</body>
+</html>
