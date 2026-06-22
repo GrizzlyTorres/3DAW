@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FallsCar</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-icon">🚗</span>
+                <span class="logo-text">FallsCar</span>
+            </div>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#veiculos">Veículos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#localizacao">Localização</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#login" id="btn-auth-unificado" class="btn-login">Login / Cadastre-se</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero" aria-labelledby="hero-title">
+            <div class="hero-overlay">
+                <div class="container hero-content">
+                    <h1 id="hero-title">Alugue o carro dos seus sonhos</h1>
+                    <p>Encontre o veículo perfeito para sua viagem com os melhores preços e condições.</p>
+                    <a href="#reservar" class="btn-primary">Reserve Agora</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="veiculos" class="vehicles-section" aria-labelledby="vehicles-title">
+            <section class="container">
+                <h2 id="vehicles-title" class="section-title">Nossos Veículos</h2>
+
+                <ul id="lista-veiculos" class="vehicles-grid">
+                    <p>Carregando veículos...</p>
+                </ul>
+            </section>
+        </section>
+
+        <section id="contato" class="contact-section" aria-labelledby="contact-title">
+            <div class="container contact-container">
+                <h2 id="contact-title" class="section-title">Contato</h2>
+                <p>Entre em contato conosco para mais informações ou reservas.</p>
+
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="nome" class="sr-only">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem" class="sr-only">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Mensagem" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="sobre" class="about-section" aria-labelledby="about-title">
+            <div class="container about-container">
+                <h2 id="about-title" class="section-title">Sobre Nós</h2>
+                <p>Na FallsCar, acreditamos que a liberdade de explorar o mundo começa com a escolha do carro perfeito.
+                    Mais do que apenas alugar de veículos, oferecemos a chave para sua próxima aventura, seja uma
+                    escapada urbana, uma viagem em família ou a conquista de novos horizontes.</p>
+                <p><strong>Nosso Compromisso:</strong><br>Com uma frota diversificada e impecável, que vai de compactos
+                    ágeis a SUVs espaçosos e carros de luxo, temos o veículo ideal para cada necessidade e estilo.
+                    Priorizamos a sua tranquilidade, com um atendimento transparente e eficiente, para que você se
+                    concentre apenas em aproveitar a viagem.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <p>CNPJ: 00.000.000/0000-00</p>
+                <div class="social-icons">
+                    <span>WhatsApp</span> | <span>Facebook</span> | <span>Twitter</span>
+                </div>
+                <p>E-mail: rent_a_car@email.com.br</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Início</h4>
+                    <ul>
+                        <li><a href="#inicio">Home</a></li>
+                        <li><a href="#veiculos">Veículos</a></li>
+                        <li><a href="#login">Login</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Sobre Nós</h4>
+                    <ul>
+                        <li><a href="#sobre">Quem somos</a></li>
+                        <li><a href="#politica">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-payments">
+                <h4>Bandeiras:</h4>
+                <div class="payment-icons">
+                    <span>Mastercard</span> | <span>Visa</span> | <span>Elo</span>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Política de Pagamentos</a> | <a href="#">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FallsCar. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <button class="floating-help-btn" aria-label="Ajuda">
+        <span class="help-icon">?</span>
+        <span class="help-text">Posso ajudar?<br>Clique Aqui!</span>
+    </button>
+
+    <a href="#cadastro" id="btn-abrir-cadastro" class="btn-login">Login / Cadastre-se</a>
+
+    <dialog id="modal-cadastro" class="registration-modal">
+        <header class="modal-header">
+            <h3>Criar Conta</h3>
+            <button type="button" id="btn-fechar-cadastro" class="btn-close" aria-label="Fechar pop-up">&times;</button>
+        </header>
+
+        <form class="modal-form" action="#" method="POST">
+
+            <fieldset class="form-section">
+                <legend>Dados Pessoais</legend>
+
+                <p class="form-group full-width">
+                    <label for="cad-nome">Nome Completo</label>
+                    <input type="text" id="cad-nome" name="nome" placeholder="Nome igual ao documento" required>
+                </p>
+
+                <p class="form-group">
+                    <label for="cad-data-nasc">Data de Nascimento</label>
+                    <input type="date" id="cad-data-nasc" name="data_nascimento" required>
+                </p>
+
+                <p class="form-group">
+                    <label for="cad-telefone">Telefone / WhatsApp</label>
+                    <input type="tel" id="cad-telefone" name="telefone" placeholder="(21) 99999-9999">
+                </p>
+
+                <p class="form-group full-width">
+                    <label for="cad-email">E-mail</label>
+                    <input type="email" id="cad-email" name="email" placeholder="seu@email.com" required>
+                </p>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>Documentos</legend>
+
+                <p class="form-group">
+                    <label for="cad-cpf">CPF</label>
+                    <input type="text" id="cad-cpf" name="cpf" placeholder="000.000.000-00" required>
+                </p>
+
+                <p class="form-group">
+                    <label for="cad-cnh">Número da CNH</label>
+                    <input type="text" id="cad-cnh" name="cnh" placeholder="00000000000">
+                </p>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>Segurança da Conta</legend>
+
+                <p class="form-group">
+                    <label for="cad-senha">Senha</label>
+                    <input type="password" id="cad-senha" name="senha" placeholder="Mínimo 8 caracteres" required>
+                </p>
+
+                <p class="form-group">
+                    <label for="cad-confirmar-senha">Confirmar Senha</label>
+                    <input type="password" id="cad-confirmar-senha" name="confirmar_senha" placeholder="Repita a senha"
+                        required>
+                </p>
+            </fieldset>
+
+            <button type="submit" class="btn-submit">Finalizar e Cadastrar</button>
+
+            <footer class="modal-footer-nav">
+                <p>Já tem uma conta? <a href="#login" id="link-voltar-login">Entre aqui</a></p>
+            </footer>
+        </form>
+    </dialog>
+
+    <dialog id="modal-login" class="login-modal custom-login-layout">
+
+        <header class="modal-header">
+            <h2 class="login-title">Login</h2>
+            <button type="button" id="btn-fechar-login" class="btn-close" aria-label="Fechar pop-up">&times;</button>
+        </header>
+
+        <form class="modal-form" action="#" method="POST">
+
+            <fieldset class="social-login">
+                <legend class="sr-only">Iniciar sessão com outras contas</legend>
+                <button type="button" class="btn-social">
+                    <span class="icon-google">G</span> Continuar com o Google
+                </button>
+                <button type="button" class="btn-social">
+                    <span class="icon-phone">📞</span> Continuar com um número de telefone
+                </button>
+            </fieldset>
+
+            <fieldset class="login-fields">
+                <legend class="sr-only">Credenciais de Acesso</legend>
+
+                <p class="form-group">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="email" placeholder="Entre com seu email" required>
+                </p>
+
+                <p class="form-group">
+                    <label for="login-senha">Senha:</label>
+                    <input type="password" id="login-senha" name="senha" placeholder="Entre com sua senha" required>
+                </p>
+            </fieldset>
+
+            <fieldset class="login-actions">
+                <legend class="sr-only">Ações de Início de Sessão</legend>
+
+                <button type="submit" class="btn-submit-orange">Entrar</button>
+
+                <label class="remember-me">
+                    <input type="checkbox" name="lembrar" checked> Lembrar de mim
+                </label>
+            </fieldset>
+
+            <footer class="login-footer">
+                <p><a href="#recuperar" class="link-orange">Esqueceu sua senha?</a></p>
+                <p>Não tem uma conta? <a href="#cadastro" id="link-ir-cadastro" class="link-orange">Cadastre-se</a></p>
+            </footer>
+        </form>
+    </dialog>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
