@@ -1,0 +1,93 @@
+body.auth-page-bg {
+    background: url('../imagens/esportivo-luxo.png') no-repeat center center/cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.cadastro-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.cadastro-wrapper {
+    width: 100%;
+    max-width: 850px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.cadastro-title {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #000;
+    font-weight: 800;
+}
+
+.cadastro-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #000;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #ff6b00;
+}
+
+.form-actions {
+    grid-column: 1;
+    margin-top: 15px;
+}
+
+.btn-submit-orange {
+    background-color: #ff6b00;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit-orange:hover {
+    background-color: #e65c00;
+}
+
+@media (max-width: 768px) {
+    .cadastro-form {
+        grid-template-columns: 1fr;
+    }
+}

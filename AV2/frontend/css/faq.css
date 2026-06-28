@@ -1,0 +1,99 @@
+body.page-faq {
+    background-color: #f4f4f4;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.faq-main {
+    flex-grow: 1;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.faq-title {
+    font-size: 22px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #fafafa;
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 15px;
+    color: #444;
+    cursor: pointer;
+    user-select: none;
+    list-style: none; /* Remove a setinha padrão do HTML */
+}
+
+/* Esconde a setinha padrão no Chrome/Safari */
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-icon {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    transition: transform 0.3s ease; /* Animação suave para rodar a seta */
+}
+
+/* Roda a seta quando o item for aberto */
+details[open] .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px 20px 20px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    background-color: #fafafa;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .payment-col {
+        text-align: left;
+    }
+    .payment-icons, .footer-bottom-links {
+        justify-content: flex-start;
+    }
+}

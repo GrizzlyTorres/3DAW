@@ -1,0 +1,69 @@
+body.auth-page-bg {
+    background: url('../imagens/esportivo-luxo.png') no-repeat center center/cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.login-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.login-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 950px;
+    background-color: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    min-height: 550px;
+}
+
+.login-form-side {
+    flex: 1;
+    background-color: #f1f2f3;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 450px;
+}
+
+.login-image-side {
+    flex: 1.5;
+    background-image: url('../imagens/carrologin.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+.custom-login-layout.auth-container {
+    margin: 0;
+    box-shadow: none; 
+    border-radius: 0; 
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .login-wrapper {
+        flex-direction: column;
+        max-width: 450px;
+    }
+    .login-image-side {
+        min-height: 250px;
+        flex: none;
+    }
+    .login-form-side {
+        max-width: 100%;
+    }
+}
