@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - FallsCar</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body class="auth-page-bg">
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-icon">🚗</span>
+                <span class="logo-text">FallsCar</span>
+            </div>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="veiculos.html">Veículos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="localizacao.html">Localização</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" id="btn-auth-unificado" class="btn-login">LOGIN | </a>
+                <a href="cadastro.html" id="btn-abrir-cadastro" class="btn-login">CADASTRAR</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="login-main">
+        <div class="login-wrapper">
+            
+            <div class="login-form-side custom-login-layout auth-container">
+                <header class="modal-header">
+                    <h2 class="login-title">Login</h2>
+                </header>
+
+                <form class="modal-form" action="#" method="POST">
+                    <fieldset class="social-login">
+                        <legend class="sr-only">Iniciar sessão com outras contas</legend>
+                        <button type="button" class="btn-social">
+                            <span class="icon-google" style="color: #DB4437; font-weight: bold;">G</span> Continuar com o Google
+                        </button>
+                        <button type="button" class="btn-social">
+                            <span class="icon-phone">📞</span> Continuar com um número de telefone
+                        </button>
+                    </fieldset>
+
+                    <fieldset class="login-fields">
+                        <legend class="sr-only">Credenciais de Acesso</legend>
+                        <p class="form-group">
+                            <label for="login-email">Email:</label>
+                            <input type="email" id="login-email" name="email" placeholder="Entre com seu email" required>
+                        </p>
+                        <p class="form-group">
+                            <label for="login-senha">Senha:</label>
+                            <input type="password" id="login-senha" name="senha" placeholder="Entre com sua senha" required>
+                        </p>
+                    </fieldset>
+
+                    <fieldset class="login-actions">
+                        <legend class="sr-only">Ações de Início de Sessão</legend>
+                        <button type="submit" class="btn-submit-orange">Entrar</button>
+                        <label class="remember-me">
+                            <input type="checkbox" name="lembrar" checked> Lembrar de mim
+                        </label>
+                    </fieldset>
+
+                    <footer class="login-footer">
+                        <p><a href="#recuperar" class="link-orange">Esqueceu sua senha?</a></p>
+                        <p>Não tem uma conta? <a href="cadastro.html" class="link-orange">Cadastre-se</a></p>
+                    </footer>
+                </form>
+            </div>
+            
+            <div class="login-image-side">
+                </div>
+            
+        </div>
+    </main>
+
+</body>
+</html>

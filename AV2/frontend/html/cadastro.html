@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro - FallsCar</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
+</head>
+<body class="auth-page-bg">
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-icon">🚗</span>
+                <span class="logo-text">FallsCar</span>
+            </div>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="veiculos.html">Veículos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="localizacao.html">Localização</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" id="btn-auth-unificado" class="btn-login">LOGIN | </a>
+                <a href="cadastro.html" id="btn-abrir-cadastro" class="btn-login">CADASTRAR</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="cadastro-main">
+        <section class="cadastro-wrapper">
+            <h2 class="cadastro-title">Cadastro</h2>
+
+            <form class="cadastro-form" action="#" method="POST">
+                <p class="form-group">
+                    <label for="cad-nome">Nome Completo:</label>
+                    <input type="text" id="cad-nome" name="nome" placeholder="insira seu nome completo" required>
+                </p>
+
+                <p class="form-group">
+                    <label for="cad-cnh">CNH:</label>
+                    <input type="text" id="cad-cnh" name="cnh" placeholder="opcional para motoristas">
+                </p>
+
+                <p class="form-group">
+                    <label for="cad-email">Email:</label>
+                    <input type="email" id="cad-email" name="email" placeholder="insira seu email" required>
+                </p>
+
+                <p class="form-group">
+                    <label for="cad-cat-cnh">Categoria da CNH:</label>
+                    <input type="text" id="cad-cat-cnh" name="categoria_cnh">
+                </p>
+
+                <p class="form-group">
+                    <label for="cad-cpf">CPF:</label>
+                    <input type="text" id="cad-cpf" name="cpf" placeholder="xxx.xxx.xxx-xx" required>
+                </p>
+
+                <p class="form-group">
+                    <label for="cad-data-nasc">Data de nascimento:</label>
+                    <input type="date" id="cad-data-nasc" name="data_nascimento" required>
+                </p>
+
+                <p class="form-group">
+                    <label for="cad-senha">Senha:</label>
+                    <input type="password" id="cad-senha" name="senha" required>
+                </p>
+
+                <p class="form-group">
+                    <label for="cad-rg">RG:</label>
+                    <input type="text" id="cad-rg" name="rg" placeholder="xx.xxx.xxx-x" required>
+                </p>
+
+                <p class="form-group">
+                    <label for="cad-confirma-senha">Confirme a Senha:</label>
+                    <input type="password" id="cad-confirma-senha" name="confirma_senha" required>
+                </p>
+
+                <p class="form-group">
+                    <label for="cad-telefone">Telefone:</label>
+                    <input type="tel" id="cad-telefone" name="telefone" placeholder="(xx) xxxxx-xxxx" required>
+                </p>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit-orange">Cadastrar</button>
+                </div>
+            </form>
+            
+        </section>
+    </main>
+
+</body>
+</html>
