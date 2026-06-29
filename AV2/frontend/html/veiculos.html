@@ -13,7 +13,327 @@
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">
+                <span class="logo-icon">🚗</span><!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Veículos - FallsCar</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/veiculos.css">
+</head>
+
+<body class="page-veiculos">
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
                 <span class="logo-icon">🚗</span>
+                <span class="logo-text">FallsCar</span>
+            </div>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="veiculos.html">Veículos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="localizacao.html">Localização</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" id="btn-auth-unificado" class="btn-login">LOGIN | </a>
+                <a href="cadastro.html" id="btn-abrir-cadastro" class="btn-login">CADASTRAR</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="veiculos-main">
+        <section class="search-section">
+            <div class="search-box">
+                <h2 class="search-title">Encontre o seu carro ideal</h2>
+
+                <form id="form-filtros" action="#" method="GET">
+                    <div class="search-main-bar">
+                        <input type="text" name="busca_livre" placeholder="Buscar por modelo, marca...">
+                        <button type="submit" class="btn-buscar">Buscar</button>
+                    </div>
+
+                    <div class="filter-row-5">
+                        <div class="filter-group">
+                            <label for="retirada">Retirada:</label>
+                            <input type="date" id="retirada" name="retirada">
+                        </div>
+                        <div class="filter-group">
+                            <label for="devolucao">Devolução:</label>
+                            <input type="date" id="devolucao" name="devolucao">
+                        </div>
+                        <div class="filter-group">
+                            <label for="estado">Estado:</label>
+                            <select id="estado" name="estado">
+                                <option value="">Qualquer estado</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="cidade">Cidade:</label>
+                            <select id="cidade" name="cidade">
+                                <option value="">Qualquer cidade</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="marca">Marca:</label>
+                            <select id="marca" name="marca">
+                                <option value="">Todas as Marcas</option>
+                                <option value="audi">Audi</option>
+                                <option value="bmw">BMW</option>
+                                <option value="byd">BYD</option>
+                                <option value="caoa_chery">Caoa Chery</option>
+                                <option value="chevrolet">Chevrolet</option>
+                                <option value="citroen">Citroën</option>
+                                <option value="fiat">Fiat</option>
+                                <option value="ford">Ford</option>
+                                <option value="honda">Honda</option>
+                                <option value="hyundai">Hyundai</option>
+                                <option value="jeep">Jeep</option>
+                                <option value="kia">Kia</option>
+                                <option value="mercedes">Mercedes-Benz</option>
+                                <option value="mitsubishi">Mitsubishi</option>
+                                <option value="nissan">Nissan</option>
+                                <option value="peugeot">Peugeot</option>
+                                <option value="porsche">Porsche</option>
+                                <option value="renault">Renault</option>
+                                <option value="toyota">Toyota</option>
+                                <option value="volkswagen">Volkswagen</option>
+                                <option value="volvo">Volvo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-row-3">
+                        <div class="filter-group">
+                            <label for="tipo">Tipo:</label>
+                            <select id="tipo" name="tipo">
+                                <option value="">Todos os Tipos</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="assentos">Número de Assentos:</label>
+                            <select id="assentos" name="assentos">
+                                <option value="">Qualquer número de assentos</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="ano">Ano do Carro:</label>
+                            <select id="ano" name="ano">
+                                <option value="">Qualquer ano</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-row-checkbox">
+                        <div class="filter-check-group">
+                            <label for="ar_condicionado">Ar Condicionado:</label>
+                            <input type="checkbox" id="ar_condicionado" name="ar_condicionado">
+                        </div>
+                        <div class="filter-check-group">
+                            <label for="multimidia">Multimídia:</label>
+                            <input type="checkbox" id="multimidia" name="multimidia">
+                        </div>
+                        <div class="filter-check-group">
+                            <label for="pcd">Adaptado PCD:</label>
+                            <input type="checkbox" id="pcd" name="pcd">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div id="resultados-veiculos" class="car-grid">
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <p>CNPJ: 00.000.000/0000-00</p>
+                <div class="social-icons">
+                    <span>WhatsApp</span> | <span>Facebook</span> | <span>Twitter</span>
+                </div>
+                <p>E-mail: rent_a_car@email.com.br</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Início</h4>
+                    <ul>
+                        <li><a href="#inicio">Home</a></li>
+                        <li><a href="#veiculos">Veículos</a></li>
+                        <li><a href="#login">Login</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Sobre Nós</h4>
+                    <ul>
+                        <li><a href="#sobre">Quem somos</a></li>
+                        <li><a href="#politica">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-payments">
+                <h4>Bandeiras:</h4>
+                <div class="payment-icons">
+                    <span>Mastercard</span> | <span>Visa</span> | <span>Elo</span>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Política de Pagamentos</a> | <a href="#">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FallsCar. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="modal-reserva" class="modal-overlay">
+    <div class="modal-content">
+        
+        <div id="modal-conteudo-principal">
+            <div class="modal-header">
+                <img id="modal-img-carro" src="../imagens/c3_aircross.png" alt="Carro">
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-coluna">
+                    <h3>Detalhes da Reserva</h3>
+                    
+                    <div class="modal-icons">
+                        <span id="modal-icone-ar">❄️ Ar-Cond.</span>
+                        <span id="modal-icone-multimidia">📺 Multimídia</span>
+                        <span id="modal-icone-assentos">👤 5 Lugares</span>
+                    </div>
+
+                    <p><strong>Modelo:</strong> <span id="modal-modelo"></span></p>
+                    <p><strong>Ano:</strong> <span id="modal-ano"></span></p>
+                    <p><strong>Placa:</strong> A definir na retirada</p>
+                    <p><strong>Valor do Aluguel:</strong> R$ <span id="modal-diaria"></span>/dia</p>
+                    <p><strong>Valor do Seguro (obrigatório):</strong> R$ 20,00/dia</p>
+
+                    <div class="modal-form-group">
+                        <label for="modal-dias">Tempo de locação (dias):</label>
+                        <input type="number" id="modal-dias" min="1" value="1" style="width: 80px;">
+                    </div>
+
+                    <div class="modal-form-group-inline">
+                        <div>
+                            <label for="modal-data-retirada">Data de Retirada:</label>
+                            <input type="date" id="modal-data-retirada">
+                        </div>
+                        <div>
+                            <label for="modal-hora-retirada">Horário:</label>
+                            <input type="time" id="modal-hora-retirada">
+                        </div>
+                    </div>
+
+                    <div class="modal-pagamento-box">
+                        <h4>Informações de Pagamento</h4>
+                        <input type="text" id="pagamento-nome" placeholder="Nome impresso no cartão">
+                        <input type="text" id="pagamento-cartao" placeholder="0000 0000 0000 0000" maxlength="19">
+                        <div class="modal-form-group-inline">
+                            <input type="text" id="pagamento-validade" placeholder="MM/AA" maxlength="5" style="width: 45%;">
+                            <input type="text" id="pagamento-cvv" placeholder="CVV" maxlength="4" style="width: 45%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-coluna">
+                    <h3>Local de Retirada</h3>
+                    
+                    <div class="modal-form-group">
+                        <label for="modal-estado">Estado:</label>
+                        <select id="modal-estado">
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="SP">São Paulo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="modal-form-group">
+                        <label for="modal-cidade">Cidade:</label>
+                        <select id="modal-cidade">
+                            <option value="Rio de Janeiro">Rio de Janeiro</option>
+                            <option value="São Paulo">São Paulo</option>
+                        </select>
+                    </div>
+
+                    <div class="modal-form-group checkbox-group">
+                        <label>
+                            Deseja um motorista? (+R$80) 
+                            <input type="checkbox" id="modal-motorista">
+                        </label>
+                    </div>
+
+                    <div class="modal-total-box">
+                        <strong>Total:</strong> R$ <span id="modal-valor-total">00,00</span>
+                    </div>
+
+                    <div class="modal-botoes">
+                        <button id="btn-confirmar-reserva" class="btn-confirmar">Confirmar Reserva</button>
+                        <button id="btn-cancelar-reserva" class="btn-cancelar">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-conteudo-sucesso" style="display: none; text-align: center; padding: 40px 20px;">
+            <div style="font-size: 5rem; margin-bottom: 20px;">✅</div>
+            <h2 style="color: #ff6a00; font-size: 2rem; margin-bottom: 15px;">Reserva Confirmada!</h2>
+            <p style="font-size: 1.1rem; color: #333; margin-bottom: 30px;">Obrigado por escolher a FallsCar. O veículo ideal para a sua viagem já está garantido.</p>
+            <button id="btn-fechar-sucesso" class="btn-confirmar">Voltar aos Veículos</button>
+        </div>
+
+    </div>
+</div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/veiculos.js"></script>
+</body>
+
+</html>
                 <span class="logo-text">FallsCar</span>
             </div>
             <nav class="main-nav" aria-label="Navegação principal">

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Login - FallsCar</title>
-    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body class="auth-page-bg">
 
     <header class="site-header">
@@ -32,17 +34,19 @@
 
     <main class="login-main">
         <div class="login-wrapper">
-            
+
             <div class="login-form-side custom-login-layout auth-container">
                 <header class="modal-header">
                     <h2 class="login-title">Login</h2>
                 </header>
 
                 <form class="modal-form" action="#" method="POST">
+                    <div id="feedback-login" style="color: #d9534f; margin-bottom: 15px; font-weight: bold; display: none; text-align: center;"></div>
                     <fieldset class="social-login">
                         <legend class="sr-only">Iniciar sessão com outras contas</legend>
                         <button type="button" class="btn-social">
-                            <span class="icon-google" style="color: #DB4437; font-weight: bold;">G</span> Continuar com o Google
+                            <span class="icon-google" style="color: #DB4437; font-weight: bold;">G</span> Continuar com
+                            o Google
                         </button>
                         <button type="button" class="btn-social">
                             <span class="icon-phone">📞</span> Continuar com um número de telefone
@@ -53,11 +57,13 @@
                         <legend class="sr-only">Credenciais de Acesso</legend>
                         <p class="form-group">
                             <label for="login-email">Email:</label>
-                            <input type="email" id="login-email" name="email" placeholder="Entre com seu email" required>
+                            <input type="email" id="login-email" name="email" placeholder="Entre com seu email"
+                                required>
                         </p>
                         <p class="form-group">
                             <label for="login-senha">Senha:</label>
-                            <input type="password" id="login-senha" name="senha" placeholder="Entre com sua senha" required>
+                            <input type="password" id="login-senha" name="senha" placeholder="Entre com sua senha"
+                                required>
                         </p>
                     </fieldset>
 
@@ -75,12 +81,14 @@
                     </footer>
                 </form>
             </div>
-            
+
             <div class="login-image-side">
-                </div>
-            
+            </div>
+
         </div>
     </main>
-
+    <script src="../js/script.js"></script>
+    <script src="../js/login.js"></script>
 </body>
+
 </html>

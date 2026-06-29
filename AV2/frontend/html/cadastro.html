@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Cadastro - FallsCar</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/cadastro.css">
 </head>
+
 <body class="auth-page-bg">
 
     <header class="site-header">
@@ -52,7 +54,15 @@
 
                 <p class="form-group">
                     <label for="cad-cat-cnh">Categoria da CNH:</label>
-                    <input type="text" id="cad-cat-cnh" name="categoria_cnh">
+                    <select id="cad-cat-cnh" name="categoria_cnh" required>
+                        <option value="" disabled selected>Selecione uma categoria</option>
+                        <option value="A">A (Moto)</option>
+                        <option value="B">B (Carro)</option>
+                        <option value="AB">AB (Moto e Carro)</option>
+                        <option value="C">C (Caminhão)</option>
+                        <option value="D">D (Ônibus)</option>
+                        <option value="E">E (Articulados)</option>
+                    </select>
                 </p>
 
                 <p class="form-group">
@@ -89,9 +99,11 @@
                     <button type="submit" class="btn-submit-orange">Cadastrar</button>
                 </div>
             </form>
-            
+
         </section>
     </main>
-
+    <script src="../js/cadastro.js"></script>
+    <script src="../js/script.js"></script>
 </body>
+
 </html>
