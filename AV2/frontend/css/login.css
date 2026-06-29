@@ -52,7 +52,11 @@ fieldset {
 }
 
 .login-image-side {
-
+    flex: 1; 
+    background-image: url('../imagens/background4.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     margin: 0;
 }
 
